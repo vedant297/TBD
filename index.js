@@ -68,7 +68,9 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
-mongoose.connect('mongodb+srv://vedantpatel0000:LLtX71hz2eLg2sRS@veda-test.fn7qvwj.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
+const dbUrl = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/travel';
+
+mongoose.connect( dbUrl , { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connection Open')
     })
