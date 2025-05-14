@@ -1,0 +1,65 @@
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/common_banner', { pageTitle: 'News' }) %> 
+
+    <!-- News Area -->
+    <section id="news_main_arae" class="section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="section_heading_center">
+                        <h2 class="text-custom">Latest travel news</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <% for( let newsdetail of news) { %>
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="news_four_card">
+                                <div class="news_four_card_img">
+                                    <a href="news-details/<%= newsdetail._id %>">
+                                        <img src="<%= newsdetail.image %>" alt="img">
+                                    </a>
+                                </div>
+                                <div class="news_four_card_conrent">
+                                    <div class="new_four_card_lists">
+                                        <ul>
+                                            <li> <span><%= newsdetail.Tag %></span> <i class="fas fa-circle"></i></li>
+                                            <li><%= formatDate(newsdetail.Date) %> <i class="fas fa-circle"></i></li>
+                                            <li><%= newsdetail.minutesread %> min read</li>
+                                        </ul>
+                                    </div>
+                                    <h3><a href="news-details/<%= newsdetail._id %>"><%= newsdetail.Title %></a></h3>
+                                    <p><%= newsdetail.shortdetail %></p>
+                                    <a href="<%= newsdetail.url %>">Read more...</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="pagination_area">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">»</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

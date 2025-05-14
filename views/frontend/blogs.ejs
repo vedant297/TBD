@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') %>
+    
+<%- include('../partials/common_banner', { pageTitle: 'Travel Blogs' }) %> 
+
+<!-- Blog Grid Section -->
+<section id="blog_area" class="section_padding">
+    <div class="container">
+        <div class="section_heading_center mb-5">
+            <h2 class="text-custom">Explore Travel Stories & Tips</h2>
+        </div>
+        <div class="row">
+            <% for( let blog of blogs) { %>
+                        
+            <!-- Blog Post -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="blog_post_card">
+                    <div class="blog_post_img">
+                        <a href="blog-details/<%= blog._id %>"><img src="<%= blog.images[0] %>" alt="<%= blog.title %>" class="img-fluid" ></a>
+                    </div>
+                    <div class="blog_post_content">
+                        <h4><a href="blog-details/<%= blog._id %>"><%= blog.title %></a></h4>
+                        <!-- Tag Badges -->
+
+                        <div class="mb-2">  
+                        <% for( let t of blog.tag) { %>
+                                                     
+                            <span class="badge" style="background-color: <%= randomBGColor () %>; color: white; margin-right: 5px;">
+                                <%= t %>
+                            </span>
+                            
+                            
+                        <% } %>                        
+                        </div> 
+
+                        <p><%= blog.shortdescription %></p>
+                        <a href="blog-details/<%= blog._id %>" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        <% } %> 
+        </div>
+    </div>
+</section>

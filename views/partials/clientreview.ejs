@@ -1,0 +1,55 @@
+<!-- Clients review Area -->
+<section id="home_Three_client" class="section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="home_client_wrpper">
+                    <img src="uploads/common/quote.png" alt="img">    
+                    <h4>Our testimonials</h4>
+                    <h2>What our clients say about us</h2>
+                    <!-- <div class="home-two-quote">
+                        <img src="uploads/common/quote.png" alt="img">    
+                        <h3>Comments</h3>                    
+                    </div> -->
+                    <div class="home_two_client_slider  owl-theme owl-carousel">
+                        <% for( let testimonial of testimonials) { %>                            
+                            <div class="client_two_content">
+                                <div class="all_review_star">
+                                <div class="review_star_all">
+                                    <% if (testimonial.starRating = 'ONE' ) { %>
+                                        <i class="fas fa-star"></i>
+                                        <% } %>
+                                    <% if (testimonial.starRating = 'TWO' ) { %>
+                                        <i class="fas fa-star"></i>
+                                        <% } %>
+                                    <% if (testimonial.starRating = 'THREE' ) { %>
+                                        <i class="fas fa-star"></i>
+                                        <% } %>
+                                    <% if (testimonial.starRating = 'FOUR' ) { %>
+                                        <i class="fas fa-star"></i>
+                                        <% } %>
+                                    <% if (testimonial.starRating = 'FIVE' ) { %>
+                                        <i class="fas fa-star"></i>
+                                        <% } %>
+                                </div>
+                            </div>
+                                <p>
+                                    <%= testimonial.comment %>
+                                </p>
+                                <div class="client_two_author">
+                                    <h5><%= testimonial.reviewer.displayName %></h5>
+                                    <h6><%= formatDate(testimonial.createTime) %></h6>
+                                </div>
+                            </div> 
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="home_three_client_right">
+                    <img src="/frontend/img/icon/test.png" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,53 @@
+<%- include('../partials/meta', {
+  title: 'Cruise Bookings | Veda Vonager',
+  description: 'Explore top ocean and river cruise deals with Veda Vonager. Our offline cruise bookings guarantee better rates than any online portal, customized for your travel goals.',
+  keywords: 'cruise booking India, ocean cruises, river cruises, offline cruise deals, luxury cruise packages, Veda Vonager',
+  url: 'https://www.vedavonager.in/cruise',
+  image: 'https://www.vedavonager.in/uploads/banners/cruise-banner.jpg'
+}) %>
+
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/common_banner', { pageTitle: 'Cruise' }) %> 
+
+<!-- Cruise Booking Section -->
+<section class="section section_padding cruise-section bg-white">
+  <div class="container">
+    <div class="section_heading_center">
+      <h2 class="text-center text-custom">Explore the Seas with Veda Vonager</h2>
+      <p class="text-center mb-4 lead text-highlight">
+        We specialize in offline cruise deals—often better than any online fare—handpicked to match your travel style and budget.
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card bg-light">
+          <div class="card-icon mb-3">
+            <i class="fas fa-ship"></i>
+          </div>
+          <h5>Ocean Cruises</h5>
+          <p>Sail across continents in premium cruise liners with our customized offline fares. From luxury to family-friendly—we cover it all.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card bg-light">
+          <div class="card-icon mb-3">
+            <i class="fas fa-water"></i>
+          </div>
+          <h5>River Cruises</h5>
+          <p>Discover scenic routes in Europe and Asia with curated river cruise experiences. Offline-only rates, tailored to your needs.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-12 text-center">
+        <p class="text-muted small">
+          ⚓ Bookings are processed manually to ensure the most personalized, competitive pricing.
+        </p>
+        <a href="/contactus" class="btn btn_theme btn-lg mt-3">Plan Your Cruise</a>
+      </div>
+    </div>
+  </div>
+</section>

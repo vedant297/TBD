@@ -1,0 +1,60 @@
+db.bkp_blogs.drop(); 
+db.bkp_contact_details.drop(); 
+db.bkp_holidaydestinations.drop(); 
+db.bkp_holidayphotos.drop(); 
+db.bkp_news.drop(); 
+db.bkp_packages.drop(); 
+db.bkp_staticmasters.drop(); 
+db.bkp_subscribers.drop(); 
+db.bkp_testimonials.drop(); 
+db.bkp_users.drop(); 
+
+db.blogs.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_blogs" }  
+]); 
+
+db.contact_details.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_contact_details" }  
+]); 
+
+db.holidaydestinations.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_holidaydestinations" }  
+]); 
+
+db.holidayphotos.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_holidayphotos" }  
+]); 
+
+db.news.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_news" }  
+]); 
+
+db.packages.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_packages" }  
+]); 
+
+db.staticmasters.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_staticmasters" }  
+]); 
+
+db.subscribers.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_subscribers" }  
+]); 
+
+db.testimonials.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_testimonials" }  
+]); 
+
+db.users.aggregate([
+    { $match: {} },  // Match all records
+    { $out: "bkp_users" }  
+]); 

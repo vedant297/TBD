@@ -1,0 +1,160 @@
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/common_banner', { pageTitle: 'Corporate' }) %>
+
+<!-- About Us Section -->
+<section class="section section_padding bg-white why-choose-veda">
+    <div class="container">
+        <div class="section_heading_center mb-5">
+            <h2 class="text-center text-custom">Why Book Corporate Travel with Veda Vonager?</h2>
+            <p class="text-center">
+                We specialize in corporate travel solutions that prioritize your company's needs. From
+                cost-efficient bookings to personalized services, we ensure smooth and seamless travel for your
+                team—without the hassle of automated systems.
+            </p>
+        </div>
+
+        <!-- Card Layouts for Each Service -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon mb-3">
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                    <h4>Customized Travel Programs</h4>
+                    <p>Tailored itineraries for both individual and group business travel that fit your specific
+                        needs.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <h4>Personalized Service Every Time</h4>
+                    <p>Forget automated systems—every itinerary is created by experts based on your unique
+                        requirements.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon">
+                        <i class="fa fa-phone-alt"></i>
+                    </div>
+                    <h4>Flexible Booking Process</h4>
+                    <p>Share your travel plans via phone, email, or WhatsApp, and leave the rest to us with
+                        quick turnarounds.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon">
+                        <i class="fa fa-handshake"></i>
+                    </div>
+                    <h4>Dedicated Travel Manager</h4>
+                    <p>A single point of contact ensures smooth coordination, fast updates, and personalized
+                        service for your team.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon">
+                        <i class="fa fa-life-ring"></i>
+                    </div>
+                    <h4>24/7 Dedicated Support</h4>
+                    <p>We provide around-the-clock support for all your travel needs, no matter the time zone.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon">
+                        <i class="fa fa-umbrella"></i>
+                    </div>
+                    <h4>Duty of Care & Risk Management</h4>
+                    <p>Employee safety is our priority with alerts and constant support during travel.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon">
+                        <i class="fa fa-clock"></i>
+                    </div>
+                    <h4>Last-Minute Arrangements? No Problem.</h4>
+                    <p>We specialize in fast and reliable travel solutions, even on short notice.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon">
+                        <i class="fa fa-paste"></i>
+                    </div>
+                    <h4>Tailored Corporate Travel Policies</h4>
+                    <p>We help define and implement travel policies that match your company’s preferences and
+                        budget.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon">
+                        <i class="fa fa-users-cog"></i>
+                    </div>
+                    <h4>Seamless Group & Conference Travel</h4>
+                    <p>We handle everything, from team offsites to international conferences, ensuring smooth
+                        logistics every time.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-icon">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <h4>Local & International Expertise</h4>
+                    <p>Our deep knowledge of both domestic and global travel ensures flawless trips across
+                        borders.</p>
+                </div>
+            </div>
+        </div>        
+    </div>
+    </div>
+</section>
+
+<br>
+<section class="section_padding bg-light">
+    <div class="container">
+        <div class="section_heading_center mb-5">
+            <h2 class="text-center text-custom">Serving Businesses of All Sizes</h2>
+            <p class="text-center lead font-weight-semibold text-dark">
+                Whether you are a startup or a large enterprise, Veda Vonager provides scalable and
+                flexible solutions to meet your corporate travel needs.
+            </p>
+        </div>
+        
+    </div>
+</section> 
+
+<!-- Contact Section -->
+<section class="py-5 text-center flight_talk_to_us bg-white" >
+  <div class="container">
+    <h3 class="flight_talk_to_us_h3">Talk to Us for the Best Corporate Travel Solutions</h3>
+    <p class="mb-4 flight_talk_to_us_p">We offer personalized, cost-effective solutions to make your business travel seamless and efficient.</p>
+    <a href="/contactus" class="btn btn_theme btn-lg">Contact Us</a>
+  </div>
+</section> 
+
+<%- include('../partials/about-service') %>
+
+<%- include('../partials/consultation') %>
+
+<%- include('../partials/counter-area', { staticmasters: staticmasters, totaldestinations: totaldestinations }) %>
+
+<%- include('../partials/clientreview')%>

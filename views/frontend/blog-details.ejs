@@ -1,0 +1,47 @@
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/common_banner', { pageTitle: 'Travel Blogs' }) %> 
+
+<!-- Blog Details Section -->
+<section id="blog_details_area" class="section_padding">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Content -->
+            <div class="col-lg-8">
+                <div class="blog_details_content">
+                    <div class="blog_details_header mb-4">
+                        <h2 class="mb-3"><%= blog.title %></h2>
+                        <ul class="blog_meta">
+                            <li><i class="fas fa-user"></i> Admin</li>
+                            <li><i class="fas fa-calendar-alt"></i><%= formatDate(blog.createdate) %></li> 
+                        </ul>
+                    </div>
+                    <div class="blog_featured_img mb-4">
+                        <img src="<%= blog.mainimage %>" alt="<%= blog.title %>" class="img-fluid rounded">
+                    </div>
+                    
+                    <%- blog.longdescription %> 
+
+                    <!-- Share Icons -->
+                    <!-- <div class="social_share mt-4">
+                        <span>Share:</span>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<%= encodeURIComponent(url) %>"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?url=<%= encodeURIComponent(url) %>"><i class="fab fa-twitter"></i></a>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="blog_sidebar">
+                    <h5 class="mb-3">Recent Posts</h5>
+                    <ul class="list-unstyled">
+                        <% for( let recentblog of recentblogs) { %>
+                            <li><a href="/blog-details/<%= recentblog._id %>"><%= recentblog.title %></a></li> 
+                        <% } %> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

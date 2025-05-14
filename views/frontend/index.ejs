@@ -1,0 +1,448 @@
+<% layout('layouts/boilerplate') %>
+
+    <!-- search -->
+    <div class="search-overlay">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="search-overlay-layer"></div>
+                <div class="search-overlay-layer"></div>
+                <div class="search-overlay-layer"></div>
+                <div class="search-overlay-close">
+                    <span class="search-overlay-close-line"></span>
+                    <span class="search-overlay-close-line"></span>
+                </div>
+                <div class="search-overlay-form">
+                    <form>
+                        <input type="text" class="input-search" placeholder="Search here...">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Area -->
+    <section id="home_three_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner_area_three">
+                        <h3 class="top_banner_three_text">Welcome to Veda Vonager</h3>
+                        <h2>Explore Beyond Boundaries!!!</h2>
+                        <h3 class="bottom_banner_three_text">Find awesome flights, hotel, tour, car and packages</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About area -->
+    <section id="three_about_area" class="section_padding_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="three_about_left">
+                        <img src="/frontend/img/common/about-three.png" alt="img">
+                        <a class="video_btn" href="https://www.youtube.com/watch?v=_2LLXnUdUIc"
+                            title="Youtube Video"><img src="/frontend/img/icon/play.png" alt="icon"></a>
+                        <img src="/frontend/img/common/verified.png" class="verified_area" alt="img">
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="three_about_right">
+                        <h4 class="three_heading_area">Trusted partner</h4>
+                        <h2>With our experience we will serve you the best</h2>
+                        <% for( let staticmaster of staticmasters ) { %>
+                            <% if (staticmaster.static_type==="aboutcompany1" || staticmaster.static_type==="aboutcompany2" || staticmaster.static_type==="aboutcompany3" ) { %>
+                                <p>
+                                    <%= staticmaster.static_description %>
+                                </p>
+                                <% } %>
+                                    <% } %>
+                                        <div class="about_three_flex">
+                                            <div class="about_counter_item">
+                                                <h2>
+                                                    <% for( let staticmaster of staticmasters ) { %>
+                                                        <% if (staticmaster.static_type==="happycustomers" ) { %>
+                                                            <%= staticmaster.static_description %> +
+                                                                <% } %>
+                                                                    <% } %>
+                                                </h2>
+                                                <p>Happy Customers</p>
+                                            </div>
+                                            <div class="about_counter_item">
+                                                <h2>
+                                                    <%= totaldetinations %> +
+                                                </h2>
+                                                <p>Destinations</p>
+                                            </div>
+                                            <div class="about_counter_item">
+                                                <h2>100%</h2>
+                                                <p>Happiness</p>
+                                            </div>
+                                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="choose_destinations_area" class="section_padding">
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="section_heading_center">
+                        <h2>Choose your destinations</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <% for( let holidaydestination of holidaydestinations ) { %>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="choose_desti_wrapper">
+                            <div class="choose_des_inner_wrap">
+                                <div class="choose_boxed_inner">
+                                    <img src="<%= holidaydestination.picture_450_490.URL %>" alt="img" style="width: 450px; height: 490px"> 
+                                    <div class="choose_img_text">
+                                        <h2>
+                                            <%= holidaydestination.location %> | &#8377;<%=
+                                                    holidaydestination.priceStartsFrom %>
+                                        </h2>
+                                        <h3>
+                                            <%= holidaydestination.noOfDays %> days <%= holidaydestination.noOfDays -1
+                                                    %> nights
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="flep_choose_box">
+                                    <div class="flep_choose_box_inner">
+                                        <div class="rating_outof">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <h5>5 Out of 5</h5>
+                                        </div>
+                                        <h2>
+                                            <%= holidaydestination.location %> | &#8377;<%=
+                                                    holidaydestination.priceStartsFrom %>
+                                        </h2>
+                                        <h3>
+                                            <%= holidaydestination.noOfDays %> days <%= holidaydestination.noOfDays -1
+                                                    %> nights
+                                        </h3>
+                                        <p>
+                                            <%= holidaydestination.overview[0] %>
+                                        </p>
+                                        <a
+                                            href="top-destinations-details?destination=<%= encodeURIComponent(holidaydestination.location) %>">Tour
+                                            details</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <% } %>
+                        <!-- <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="choose_desti_wrapper">
+                        <div class="choose_des_inner_wrap">
+                            <div class="choose_boxed_inner">
+                                <img src="/frontend/img/destination/home-two-des-2.png" alt="img">
+                                <div class="choose_img_text">
+                                    <h2>Gangtok | $3,500</h2>
+                                    <h3>7 days 6 nights</h3>
+                                </div>
+                            </div>
+                            <div class="flep_choose_box">
+                                <div class="flep_choose_box_inner">
+                                    <div class="rating_outof">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <h5>5 Out of 5</h5>
+                                    </div>
+                                    <h2>Gangtok | $3,500</h2>
+                                    <h3>7 days 6 nights</h3>
+                                    <p>Cupidatat consectetur ea cillum laborum labore veniam proident consectetur
+                                        excepteur amet pariatur et laboris sint laborum.</p>
+                                    <a href="top-destinations-details.html">Tour details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="choose_desti_wrapper">
+                        <div class="choose_des_inner_wrap">
+                            <div class="choose_boxed_inner">
+                                <img src="/frontend/img/destination/home-two-des-3.png" alt="img">
+                                <div class="choose_img_text">
+                                    <h2>Phuket | $2,500</h2>
+                                    <h3>7 days 6 nights</h3>
+                                </div>
+                            </div>
+                            <div class="flep_choose_box">
+                                <div class="flep_choose_box_inner">
+                                    <div class="rating_outof">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <h5>5 Out of 5</h5>
+                                    </div>
+                                    <h2>Phuket | $2,500</h2>
+                                    <h3>7 days 7 nights</h3>
+                                    <p>Cupidatat consectetur ea cillum laborum labore veniam proident consectetur
+                                        excepteur amet pariatur et laboris sint laborum.</p>
+                                    <a href="top-destinations-details.html">Tour details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="choose_desti_wrapper">
+                        <div class="choose_des_inner_wrap">
+                            <div class="choose_boxed_inner">
+                                <img src="/frontend/img/destination/home-two-des-4.png" alt="img">
+                                <div class="choose_img_text">
+                                    <h2>Sydney | $6,000</h2>
+                                    <h3>4 days 3 nights</h3>
+                                </div>
+                            </div>
+                            <div class="flep_choose_box">
+                                <div class="flep_choose_box_inner">
+                                    <div class="rating_outof">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <h5>5 Out of 5</h5>
+                                    </div>
+                                    <h2>Sydney | $6,000</h2>
+                                    <h3>4 days 3 nights</h3>
+                                    <p>Cupidatat consectetur ea cillum laborum labore veniam proident consectetur
+                                        excepteur amet pariatur et laboris sint laborum.</p>
+                                    <a href="top-destinations-details.html">Tour details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="choose_desti_wrapper">
+                        <div class="choose_des_inner_wrap">
+                            <div class="choose_boxed_inner">
+                                <img src="/frontend/img/destination/home-two-des-5.png" alt="img">
+                                <div class="choose_img_text">
+                                    <h2>Gangtok | $3,500</h2>
+                                    <h3>9 days 8 nights</h3>
+                                </div>
+                            </div>
+                            <div class="flep_choose_box">
+                                <div class="flep_choose_box_inner">
+                                    <div class="rating_outof">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <h5>5 Out of 5</h5>
+                                    </div>
+                                    <h2>Gangtok | $3,500</h2>
+                                    <h3>9 days 8 nights</h3>
+                                    <p>Cupidatat consectetur ea cillum laborum labore veniam proident consectetur
+                                        excepteur amet pariatur et laboris sint laborum.</p>
+                                    <a href="top-destinations-details.html">Tour details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="choose_desti_wrapper">
+                        <div class="choose_des_inner_wrap">
+                            <div class="choose_boxed_inner">
+                                <img src="/frontend/img/destination/home-two-des-6.png" alt="img">
+                                <div class="choose_img_text">
+                                    <h2>Pattaya | $4,200</h2>
+                                    <h3>5 days 6 nights</h3>
+                                </div>
+                            </div>
+                            <div class="flep_choose_box">
+                                <div class="flep_choose_box_inner">
+                                    <div class="rating_outof">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <h5>5 Out of 5</h5>
+                                    </div>
+                                    <h2>Pattaya | $4,200</h2>
+                                    <h3>5 days 6 nights</h3>
+                                    <p>Cupidatat consectetur ea cillum laborum labore veniam proident consectetur
+                                        excepteur amet pariatur et laboris sint laborum.</p>
+                                    <a href="top-destinations-details.html">Tour details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- What we offer Area-->
+    <section id="three_We_area" class="section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="we_offer_area_three">
+                        <h4 class="three_heading_area">What we offer</h4>
+                        <h2>Discover your all the destinations with us!</h2>
+                        <p>
+                            Experience unforgettable journeys to your dream destinations!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="three_offer_slider owl-theme owl-carousel">
+                        <div class="three_offer_item">
+                            <img src="/frontend/img/icon/offer-1.png" alt="icon">
+                            <h3>Wedding destinations</h3>
+                            <p>Say ‘I do’ in the most breathtaking locations around the world. Let us craft your dream
+                                wedding with stunning venues and seamless arrangements!</p>
+                        </div>
+                        <div class="three_offer_item">
+                            <img src="/frontend/img/icon/offer-2.png" alt="icon">
+                            <h3>Homeymoon tour</h3>
+                            <p>Celebrate love in the world’s most romantic destinations. Enjoy dreamy getaways with
+                                luxurious stays and unforgettable experiences!</p>
+                        </div>
+                        <div class="three_offer_item">
+                            <img src="/frontend/img/icon/offer-3.png" alt="icon">
+                            <h3>Group tour </h3>
+                            <p>Embark on unforgettable adventures with our expertly curated group tours. Connect,
+                                explore, and create lasting memories with like-minded travelers!</p>
+                        </div>
+                        <div class="three_offer_item">
+                            <img src="/frontend/img/icon/offer-4.png" alt="icon">
+                            <h3>Family tour</h3>
+                            <p>Create beautiful memories with your loved ones on our family-friendly tours. Fun,
+                                relaxation, and adventure await for all ages!</p>
+                        </div>
+                        <div class="three_offer_item">
+                            <img src="/frontend/img/icon/offer-1.png" alt="icon">
+                            <h3>Corporate tour</h3>
+                            <p>Seamlessly planned corporate retreats and business travel solutions. Elevate teamwork,
+                                productivity, and networking in inspiring destinations!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="promotional_tours" class="section_padding_top">
+        <div class="container">            
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="section_heading_center">
+                        <h2>Trending Destinations</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="Trending_tour_slider owl-theme owl-carousel arrow_style">
+                        <% for( let package of packages) { %>                            
+                            <div class="theme_common_box_two img_hover">
+                                <div class="theme_two_box_img">
+                                    <a href="/tour-detail/<%= package.destinationDetails._id %>"><img src="/<%= package.photoDetails.URL %>" style="height: 180px; width: 271px; "
+                                            alt="img"></a>                                    
+                                    <p><i class="fas fa-map-marker-alt"></i><%= package.destinationDetails.location %>, <%= package.destinationDetails.country %></p>
+                                    <div class="discount_tab">
+                                        <span><% if ( package.destinationDetails.applicableDiscount.amount && package.destinationDetails.applicableDiscount.amount > 0 ) { %> 
+                                                            <%= package.destinationDetails.applicableDiscount.amount %> &#37; Off
+                                                                <% } %></span>
+                                    </div>
+                                </div>
+                                <div class="theme_two_box_content">
+                                    <h4><a href="/tour-detail/<%= package.destinationDetails._id %>"><%= package.destinationDetails.packageName %></a></h4>
+                                    <p><span class="review_rating"><%= package.destinationDetails.noOfDays %> days <%= package.destinationDetails.noOfDays - 1%> nights</span> 
+                                    <!-- <span
+                                            class="review_count">(1214
+                                            reviewes)
+                                    </span> -->
+                                    </p>
+                                    <h3>&#8377;<%= package.destinationDetails.priceStartsFrom %> <span>Price starts from</span></h3>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- width_offer Area -->
+    <section id="width_offer_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="width_offer_item">
+                        <div class="width_offer_icon">
+                            <img src="/frontend/img/icon/plan.png" alt="icon">
+                        </div>
+                        <div class="width_offer_text">
+                            <h3>
+                                <%= totaldetinations %>+ destinations
+                            </h3>
+                            <p>Explore breathtaking destinations handpicked for unforgettable experiences. Discover the world's best travel spots with us!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="width_offer_item">
+                        <div class="width_offer_icon">
+                            <img src="/frontend/img/icon/location.png" alt="icon">
+                        </div>
+                        <div class="width_offer_text">
+                            <h3>Best price guarantee</h3>
+                            <p>Enjoy the best price guarantee on all our travel packages. We do price match** to ensure you get the best deal!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="width_offer_item">
+                        <div class="width_offer_icon">
+                            <img src="/frontend/img/icon/suport.png" alt="icon">
+                        </div>
+                        <div class="width_offer_text">
+                            <h3>Top quality customer support</h3>
+                            <p>Experience top-quality customer support, available 24/7 to assist you at every step of your journey!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../partials/clientreview')%>

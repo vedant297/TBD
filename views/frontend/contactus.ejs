@@ -1,0 +1,91 @@
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/common_banner', { pageTitle: 'Contact' }) %> 
+
+<!-- Contact Area -->
+<section id="contact_main_arae" class="section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="contact_left_top_heading">
+                    <h2 class="text-custom">Do you have any query?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="contact_main_form_area_two">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="contact_left_top_heading">
+                        <h2 class="text-custom">Connect with us to get any
+                            any support.</h2>
+                            <h3 class="text-custom">Leave us a message</h3>
+                            <%- include('../partials/flash') %>
+                        <p>We're here to assist you! Our team is ready to help with any inquiries or concerns. Reach out now and let us provide the support you need!</p>
+                    </div>
+                    <div class="contact_form_two">
+                        <form action="/contactus" id="contact_form_content" method="POST"> 
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control bg_input" name="contactus[firstname]" placeholder="First name*">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control bg_input" name="contactus[lastname]" placeholder="Last name*">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control bg_input" name="contactus[email]" placeholder="Email address (Optional)">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control bg_input" name="contactus[mobile]" placeholder="Mobile number*">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control bg_input" rows="5" name="contactus[message]" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn_theme btn_md">Send message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact_two_left_wrapper">
+                        <h3>Contact details</h3>
+                        <div class="contact_details_wrapper">
+                            <div class="contact_detais_item">
+                                <h4>Office Address</h4>
+                                <h3>Pragaty Residency, Bopal, Ahmedabad - 380058</h3>
+                            </div>
+                            <div class="contact_detais_item">
+                                <h4>Help line</h4>
+                                <h3><a href="tel:+91-7572882818">+91-7572882818</a></h3>
+                            </div>
+                            <div class="contact_detais_item">
+                                <h4>Support mail</h4>
+                                <h3><a href="mailto:info@vedavonager.in">info@vedavonager.in</br>vedavonager@gmail.com</a></h3>
+                            </div>
+                            <div class="contact_detais_item">
+                                <h4>Contact hours</h4>
+                                <h3>Mon-Sun : 24 hours</h3>
+                            </div>
+                            <div class="contact_map_area">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.6687083874253!2d72.4717327740753!3d23.03593321583181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b78bbc47b87%3A0xce7a40a09087435b!2sVeda%20Vonager!5e0!3m2!1sen!2sin!4v1746347233889!5m2!1sen!2sin"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 

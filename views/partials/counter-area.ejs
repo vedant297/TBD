@@ -1,0 +1,48 @@
+<section id="counter_area" class="section_padding_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <div class="counter_area_wrapper">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 clo-sm-12 col-12">
+                                <div class="counter_item">
+                                    <img src="uploads/HolidayDestinations/icon/user.png" alt="icon">
+                                    <h3 class="counter"><% for( let staticmaster of staticmasters ) { %>
+                                                        <% if (staticmaster.static_type==="happycustomers" ) { %>
+                                                            <%- staticmaster.static_description %> +
+                                                                <% } %>
+                                                                    <% } %></h3>
+                                    <h6>Happy Customers</h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 clo-sm-12 col-12">
+                                <div class="counter_item">
+                                    <img src="uploads/HolidayDestinations/icon/bank.png" alt="icon">
+                                    <h3 class="counter">100%</h3>
+                                    <h6>Happiness</h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 clo-sm-12 col-12">
+                                <div class="counter_item">
+                                    <img src="uploads/HolidayDestinations/icon/world-map.png" alt="icon">
+                                    <h3 class="counter"><%= totaldestinations %> +</h3>
+                                    <h6>Destinations</h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 clo-sm-12 col-12">
+                                <div class="counter_item">
+                                    <img src="uploads/HolidayDestinations/icon/calander.png" alt="icon">
+                                    <h3 class="counter"><% for( let staticmaster of staticmasters ) { %>
+                                                        <% if (staticmaster.static_type==="noofbookings" ) { %>
+                                                            <%- staticmaster.static_description %> +
+                                                                <% } %>
+                                                                    <% } %></h3>
+                                    <h6>Bookings</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

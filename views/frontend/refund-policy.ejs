@@ -1,0 +1,139 @@
+<% layout('layouts/boilerplate') %>
+    
+<%- include('../partials/common_banner', { pageTitle: 'Refund Policy' }) %> 
+
+<!-- Privacy Policy Section -->
+<section class="section section_padding bg-white">
+  <div class="container">
+    <div class="section_heading_center">
+      <h2 class="text-center text-custom">Refund Policy</h2>
+      <p class="text-center mb-4">
+        Welcome to Veda Vonager! we strive to ensure customer satisfaction with our travel services. This Refund Policy outlines the terms under which refunds may be provided. Please read it carefully before booking any services.
+      </p>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <div class="d-flex">
+          <div class="me-3 fs-3 card-icon mb-3"><i class="fas fa-info-circle"></i></div>
+          <div>
+            <h4 class="text-custom" style="padding-top: 4px;">General Refund Guidelines</h4>
+            <p>Refunds are subject to third-party provider policies. Requests must be submitted within the allowed period and are processed after deducting applicable fees.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="d-flex">
+          <div class="me-3 fs-3 card-icon mb-3"><i class="fas fa-plane-departure"></i></div>
+          <div>
+            <h4 class="text-custom" style="padding-top: 4px;">Flight Bookings</h4>
+            <p>Refunds for flights depend on the airline’s policy. Non-refundable tickets are not eligible unless stated. Processing time may vary by airline.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row gy-4 mt-4">
+      <div class="col-md-6">
+        <div class="d-flex">
+          <div class="me-3 fs-3 card-icon mb-3"><i class="fas fa-hotel"></i></div>
+          <div>
+            <h4 class="text-custom" style="padding-top: 4px;">Hotel Bookings</h4>
+            <p>Hotel refund policies vary by property. Some bookings are non-refundable or partially refundable depending on the hotel’s terms.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex">
+          <div class="me-3 fs-3 card-icon mb-3"><i class="fas fa-umbrella-beach"></i></div>
+          <div>
+            <h4 class="text-custom" style="padding-top: 4px;">Holiday Packages</h4>
+            <p>Refunds depend on booking terms. Partial refunds may apply for timely cancellations. Non-refundable elements like entrance fees are excluded.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="row gy-4 mt-4">
+      <div class="col-md-6">
+        <div class="d-flex">
+          <div class="me-3 fs-3 card-icon mb-3"><i class="fas fa-shield-alt"></i></div>
+          <div>
+            <h4 class="text-custom" style="padding-top: 4px;">Travel Insurance</h4>
+            <p>Insurance refunds are governed by the provider’s terms. Please refer to your policy document for specific eligibility and details.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex">
+          <div class="me-3 fs-3 card-icon mb-3"><i class="fas fa-clock"></i></div>
+          <div>
+            <h4 class="text-custom" style="padding-top: 4px;">Processing Time</h4>
+            <p>Refunds are processed within 7–14 business days after approval. The actual transfer time depends on your bank or payment provider.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="row gy-4 mt-4">
+      <div class="col-md-6">
+        <div class="d-flex">
+          <div class="me-3 fs-3 card-icon mb-3"><i class="fas fa-ban"></i></div>
+          <div>
+            <h4 class="text-custom" style="padding-top: 4px;">Non-Refundable Services</h4>
+            <p>Services marked non-refundable during booking, including no-shows or violations of booking terms, are not eligible for any refund.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex">
+          <div class="me-3 fs-3 card-icon mb-3"><i class="fas fa-undo-alt"></i></div>
+          <div>
+            <h4 class="text-custom" style="padding-top: 4px;">How to Request a Refund</h4>
+            <p>Contact us with your booking reference, contact details, and reason for the refund request.<br>
+            Email: <a href="mailto:vedavonager@gmail.com">vedavonager@gmail.com</a>, <a href="mailto:info@vedavonager.in">info@vedavonager.in</a><br>
+            Phone: <a href="tel:+917572882818">+91-7572882818</a></p>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</section>
+
+<br>
+<section class="section_padding bg-light">
+    <div class="container">
+        <div class="section_heading_center mb-5">
+            <h2 class="text-center text-custom">Changes to the Refund Policy</h2>
+            <p class="text-center lead font-weight-semibold text-dark">
+                We reserve the right to update this policy at any time. All changes will be posted on this page with the revised effective date.
+            </p>
+        </div>
+        
+    </div>
+</section> 
+
+<!-- Footer CTA -->
+<section class="py-5 text-center flight_talk_to_us bg-white">
+  <div class="container">
+    <h3 class="text-custom mb-3">Transparency is Our Promise</h3>
+    <p class="mb-4">We don’t track, store, or share your data. Your journey with us is private, secure, and worry-free.</p>
+    <a href="/contactus" class="btn btn_theme btn-lg">Contact Us</a>
+  </div>
+</section>
+
+<%- include('../partials/about-service') %> 
+
+<%- include('../partials/consultation') %> 
+
+<%- include('../partials/counter-area', { staticmasters: staticmasters, totaldestinations: totaldestinations }) %> 
+
+<%- include('../partials/clientreview')%> 

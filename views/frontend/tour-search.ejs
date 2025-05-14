@@ -1,0 +1,374 @@
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/common_banner', { pageTitle: 'Top Destinations' }) %> 
+
+    <!-- Form Area -->
+    <section id="theme_search_form_tour">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="theme_search_form_area">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="tour_search_form">
+                                    <form action="#" id="searchForm">
+                                        <div class="row">
+                                            <div>
+                                                <div class="flight_Search_boxed">
+                                                    <input id="searchbox" type="text" placeholder="Where are you going?"
+                                                        autocomplete="off">
+                                                    <ul id="searchResults"
+                                                        class="react-autosuggest__suggestions-container"></ul>
+                                                </div>
+                                            </div>
+                                            <div class="top_form_search_button">
+                                                <button id="search" class="btn btn_theme btn_md">Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Search Areas -->
+    <section id="explore_area" class="section_padding">
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="section_heading_center">
+                        <h2>42 tours found</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="left_side_search_area">
+                        <div class="left_side_search_boxed">
+                            <div class="item_searc_map_area">
+                                <iframe src="<%= holidaydestinations[0].locationURL %>"></iframe>
+                            </div>
+                        </div>
+
+
+                        <div class="left_side_search_boxed">
+                            <div class="left_side_search_heading">
+                                <h5>Filter by price</h5>
+                            </div>
+                            <div class="filter-price">
+                                <div id="price-slider">
+                                </div>
+                            </div>
+                            <button class="apply" type="button">Apply</button>
+                        </div>
+                        <div class="left_side_search_boxed">
+                            <div class="left_side_search_heading">
+                                <h5>Filter by Hotel/Package star</h5>
+                            </div>
+                            <div class="filter_review">
+                                <form class="review_star">
+                                    <div class="form-check">
+                                        <input class="form-check-input ratingCheckbox" type="checkbox" value="5"
+                                            id="flexCheckDefault5">
+                                        <label class="form-check-label" for="flexCheckDefault5">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input ratingCheckbox" type="checkbox" value="4"
+                                            id="flexCheckDefault4">
+                                        <label class="form-check-label" for="flexCheckDefault4">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input ratingCheckbox" type="checkbox" value="3"
+                                            id="flexCheckDefault3">
+                                        <label class="form-check-label" for="flexCheckDefault3">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input ratingCheckbox" type="checkbox" value="2"
+                                            id="flexCheckDefault2">
+                                        <label class="form-check-label" for="flexCheckDefault2">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input ratingCheckbox" type="checkbox" value="1"
+                                            id="flexCheckDefault1">
+                                        <label class="form-check-label" for="flexCheckDefault1">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <% for( let holidaydestination of holidaydestinations ) { %>
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <!-- First Tour -->
+                                    <div class="col-lg-6 mb-4">
+                                        <div class="cruise_search_item wider-listing">
+                                            <div class="cruise_item_img">
+                                                <a href="/tour-detail/<%= holidaydestination._id %>"><img src="/<%= holidaydestination.photoDetails[1].URL %>"
+                                                    alt="Tour Image"></a>
+                                            </div>
+                                            <div class="cruise_item_inner_content">
+                                                <div class="cruise_content_top_wrapper">
+                                                    <h4>
+                                                        <%= holidaydestination.packageName %>
+                                                    </h4>
+                                                </div>
+                                                <div class="cruise_content_top_wrapper">
+                                                    <p><i class="fas fa-map-marker-alt"></i>
+                                                        <%= holidaydestination.location %>, <%=
+                                                                holidaydestination.country %>
+                                                    </p>
+                                                </div>
+                                                <div class="cruise_content_middel_wrapper">
+                                                    <h3>&#8377;<%= holidaydestination.priceStartsFrom %> <sub>/Per
+                                                                person</sub></h3>
+                                                    <p>+ GST</p>
+                                                </div>
+                                                <div class="cruise_content_bottom_wrapper">
+                                                    <ul>
+                                                        <% for( let tag of holidaydestination.tags) { %>
+                                                            <li>
+                                                                <%= tag %>
+                                                            </li>
+                                                            <% } %>
+                                                    </ul>
+                                                </div>
+                                                <div class="cruise_content_bottom_wrapper">
+                                                    <a href="/tour-detail/<%= holidaydestination._id %>"
+                                                        class="btn btn_theme btn_md">View
+                                                        details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                                <div class="col-lg-12">
+                                    <div class="pagination_area">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+        function fetchResults(query = "") {
+            fetch(`/search-destinations?query=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(response => {
+                    let dropdown = document.getElementById("searchResults");
+                    dropdown.innerHTML = "";
+                    dropdown.style.display = "none";
+
+                    if (response.length > 0) {
+                        response.forEach(item => {
+                            let listItem = document.createElement("li");
+                            listItem.classList.add("react-autosuggest__suggestion");
+                            listItem.textContent = item;
+                            dropdown.appendChild(listItem);
+                        });
+                        dropdown.style.display = "block";
+                    }
+                })
+                .catch(error => console.error("Error fetching data", error));
+        }
+
+        // Load default results on page load
+        fetchResults();
+
+        // Fetch results dynamically on user input
+        document.getElementById("searchbox").addEventListener("keyup", function () {
+            let query = this.value.trim();
+            fetchResults(query);
+        });
+
+        // Handle dropdown item click
+        document.addEventListener("click", function (e) {
+            if (e.target.classList.contains("react-autosuggest__suggestion")) {
+                document.getElementById("searchbox").value = e.target.textContent;
+                document.getElementById("searchResults").style.display = "none";
+            }
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+            if (!e.target.closest("#searchbox, #searchResults")) {
+                document.getElementById("searchResults").style.display = "none";
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let dropdown = document.getElementById("searchResults");
+            let searchbox = document.getElementById("searchbox");
+
+            // Ensure dropdown is hidden on page load
+            dropdown.style.display = "none";
+
+            let queryParams = new URLSearchParams(window.location.search);
+
+            // Set previous searchbox value
+            let destination = queryParams.get("destination");
+            if (destination) {
+                document.getElementById("searchbox").value = destination;
+            }
+
+            // Get previous price filters
+            let minPrice = queryParams.get("minPrice") || 0;
+            let maxPrice = queryParams.get("maxPrice") || 100000; // Default max value
+
+            // Initialize price slider
+            let priceSlider = document.getElementById("price-slider").noUiSlider;
+
+            if (priceSlider) {
+                priceSlider.updateOptions({
+                    range: { min: 0, max: 100000 }, // Ensure max stays at 100000
+                    start: [minPrice, maxPrice]
+                });
+
+                // Ensure tooltips show correct values
+                priceSlider.set([minPrice, maxPrice]);
+            }
+
+            // Set previous rating filters (checkboxes)
+            let selectedRatings = queryParams.get("ratings") ? queryParams.get("ratings").split(",") : [];
+            document.querySelectorAll(".ratingCheckbox").forEach(checkbox => {
+                if (selectedRatings.includes(checkbox.value)) {
+                    checkbox.checked = true;
+                }
+            });
+
+            // Function to show dropdown if there are results
+            function showDropdown() {
+                if (dropdown.innerHTML.trim() !== "") {
+                    dropdown.style.display = "block";
+                }
+            }
+
+            // Show dropdown when clicking on searchbox
+            searchbox.addEventListener("focus", function () {
+                showDropdown();
+            });
+
+            // Show dropdown when typing
+            searchbox.addEventListener("input", function () {
+                fetchResults(this.value.trim());
+                showDropdown();
+            });
+
+            // Hide dropdown when clicking outside
+            document.addEventListener("click", function (event) {
+                if (!event.target.closest("#searchbox, #searchResults")) {
+                    dropdown.style.display = "none";
+                }
+            });
+
+            // Handle dropdown item click (set selected value)
+            document.addEventListener("click", function (event) {
+                if (event.target.classList.contains("react-autosuggest__suggestion")) {
+                    searchbox.value = event.target.textContent;
+                    dropdown.style.display = "none";
+                }
+            });
+        });
+
+        document.getElementById("search").addEventListener("click", function (event) {
+            event.preventDefault(); // Stop default form submission
+
+            // Get existing query parameters        
+            let queryParams = new URLSearchParams(window.location.search);
+
+            // Get destination
+            let destination = document.getElementById("searchbox").value.trim();
+            if (destination) {
+                queryParams.set("destination", destination); // Replace if exists, append if not
+            }
+
+            // Get price range
+            let minPrice = document.querySelector(".noUi-handle-lower .noUi-tooltip")?.innerText.replace("$", "").trim();
+            let maxPrice = document.querySelector(".noUi-handle-upper .noUi-tooltip")?.innerText.replace("$", "").trim();
+
+            if (minPrice) queryParams.set("minPrice", minPrice);
+            if (maxPrice) queryParams.set("maxPrice", maxPrice);
+
+            // Get selected hotel ratings
+            let selectedRatings = [];
+            document.querySelectorAll(".ratingCheckbox:checked").forEach(checkbox => {
+                selectedRatings.push(checkbox.value);
+            });
+
+            if (selectedRatings.length > 0) {
+                queryParams.set("ratings", selectedRatings.join(",")); // Replace ratings if exists
+            } else {
+                queryParams.delete("ratings"); // Remove if no rating selected
+            }
+
+            // Debugging (Optional)
+            console.log("New URL:", `/top-destinations-details?${queryParams.toString()}`);
+
+            // Redirect with updated query parameters
+            window.location.href = `/top-destinations-details?${queryParams.toString()}`;
+        });
+
+    </script> 
