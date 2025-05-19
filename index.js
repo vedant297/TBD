@@ -121,6 +121,6 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', { err })
 })
 
-app.listen(4600, () => {
-    console.log('Port is running')
-}) 
+app.listen(4600, '0.0.0.0', () => {
+    console.log('Port is running on IPv4 (0.0.0.0:4600)');
+})
